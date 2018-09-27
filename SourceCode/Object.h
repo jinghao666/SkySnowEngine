@@ -4,5 +4,6 @@ class Object
 public:
 	Object(){};
 	virtual ~Object(){};
+	void draw(){};
 	
 };
