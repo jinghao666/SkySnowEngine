@@ -1,7 +1,7 @@
 #pragma once
 class Object
 {
-	public:
+public:
 	Object(){};
 	virtual ~Object(){};
 	
