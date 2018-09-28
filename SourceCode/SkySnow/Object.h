@@ -2,8 +2,10 @@
 class Object
 {
 public:
-	Object(){};
-	virtual ~Object(){};
-	void draw(){};
-	
+	Object();
+	virtual ~Object();
+	void  testObject()
+	{
+
+	}
 };
