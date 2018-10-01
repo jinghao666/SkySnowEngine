@@ -1,5 +1,7 @@
 #include <jni.h>
 #include <string>
+#include "Application.h"
+#include "Object.h"
 extern "C"
 JNIEXPORT jstring
 

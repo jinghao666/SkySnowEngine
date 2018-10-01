@@ -6,6 +6,7 @@ file(GLOB srcCode "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Application/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Core/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Graphics/*.cpp"
+                  "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Graphics/gl/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Input/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Math/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Metrial/*.cpp"
@@ -16,6 +17,7 @@ file(GLOB srcCode "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Application/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Core/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Graphics/*.c"
+                  "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Graphics/gl/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Input/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Math/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Metrial/*.c"
@@ -32,10 +34,11 @@ target_include_directories( SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkyS
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Application
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Core
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Graphics
+                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Graphics/gl
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Input
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Math
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Metrial
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Resource
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Scence
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/SkySnow2D
-	)
+	                       )
