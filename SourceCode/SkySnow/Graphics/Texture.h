@@ -14,7 +14,10 @@ enum class TextureType
     _2D_ARRAY
 };
 
-enum class
+enum class Format
+{
+
+};
 
 class Texture:public SNObject
 {
