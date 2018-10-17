@@ -1,9 +1,7 @@
 //
 // Created by liuqian8 on 2018/10/17.
 //
-
 #pragma once
-
 #include "vec4.hpp"
 #include "vec2.hpp"
 
