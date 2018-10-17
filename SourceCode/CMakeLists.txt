@@ -43,5 +43,8 @@ target_include_directories( SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkyS
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Resource
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Scence
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/SkySnow2D
-                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Utils
+                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/glm
+                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/glm/detail
+                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/glm/gtc
+                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/glm/gtx
 	                       )
