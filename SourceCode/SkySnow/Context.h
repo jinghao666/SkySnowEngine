@@ -3,8 +3,9 @@
 //
 
 #pragma once
-
 #include "Common.h"
+#include "Object.h"
+
 class Context
 {
 
