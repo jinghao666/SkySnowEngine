@@ -8,3 +8,8 @@ Application::~Application()
 {
     
 }
+
+bool Application::initialize()
+{
+
+}
