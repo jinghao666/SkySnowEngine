@@ -48,3 +48,6 @@ target_include_directories( SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkyS
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/glm/gtc
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/glm/gtx
 	                       )
+
+target_link_libraries( SourceCode
+                       GLESv2)

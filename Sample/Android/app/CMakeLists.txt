@@ -32,5 +32,5 @@ target_include_directories( native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
 
 target_link_libraries( native-lib
                        SourceCode
-                        GLESv2
+                       GLESv2
                        ${log-lib} )

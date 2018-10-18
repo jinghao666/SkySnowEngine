@@ -39,11 +39,26 @@ using namespace std;
 #include <GLES2/gl2.h>
 #include <android/log.h>
 #include <map>
-#include <hash_map>
-#include <hash_set>
+#include <string>
+#include <ext/hash_map>
+#include <ext/hash_set>
 #include <list>
 #define  LOGI(...)  if(DEBUG)__android_log_print(ANDROID_LOG_INFO,SKYSNOW_LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  if(DEBUG)__android_log_print(ANDROID_LOG_ERROR,SKYSNOW_LOG_TAG,__VA_ARGS__)
+        using namespace __gnu_cxx;
+        namespace __gnu_cxx
+        {
+            template<> struct hash<const string>
+            {
+                size_t operator()(const string& s) const
+                { return hash<const char*>()( s.c_str() ); } //__stl_hash_string
+            };
+            template<> struct hash<string>
+            {
+                size_t operator()(const string& s) const
+                { return hash<const char*>()( s.c_str() ); }
+            };
+        }
 #       define SN_Map      map
 #       define SN_List      list
 #       define SN_HashMap ::__gnu_cxx::hash_map

@@ -7,7 +7,7 @@
 #include "Object.h"
 #include "GPUObject.h"
 #include "GraphicsDefs.h"
-
+#include <vector>
 class VertexBuffer: public Object,public GPUObject
 {
     ENGINE_OBJECT(VertexBuffer,Object);
@@ -45,7 +45,7 @@ private:
     void updateOffsets();
     bool create();
 
-    vector<VertexElement> elements_;
+    std::vector<VertexElement> elements_;
     unsigned vertexCount_;
     unsigned vertexSize_;
     bool dynamic_;
