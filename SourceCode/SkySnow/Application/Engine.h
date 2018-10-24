@@ -5,7 +5,7 @@
 #pragma once
 #include "Object.h"
 #include "Graphics.h"
-
+#include "File.h"
 class Engine: public Object
 {
     ENGINE_OBJECT(Engine,Object);
@@ -22,6 +22,6 @@ public:
 private:
     bool initialized_ ;
 //    Renderer* renderer_;
-//    File* file;
+    File* file;
     Graphics* graphics_;
 };

@@ -9,7 +9,7 @@ File::~File()
 
 }
 
-string File::getStringFromFile(const string filename, FileMode mode)
+std::string File::getStringFromFile(const string filename, FileMode mode)
 {
     std::string s;
     getContents(filename,&s);

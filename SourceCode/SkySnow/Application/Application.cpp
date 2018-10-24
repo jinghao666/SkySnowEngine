@@ -1,6 +1,5 @@
 
 #include "Application.h"
-//#include "Context.h"
 #include "Engine.h"
 Application::Application(Context *context) :
         Object(context),
@@ -38,7 +37,7 @@ void Application::drawFrame()
         endTime_ = getCurrentTime();
         frameTime_ = (endTime_ - startTime_)/10;
         fps_ = 1000/frameTime_;
-        LOGE("fps_   :%f\n",fps_);
+        LOGE("fps_                 :%f\n",fps_);
         LOGE("Render One Frame Time:%f\n",frameTime_);
         count_ = 0;
         startTime_ = endTime_;

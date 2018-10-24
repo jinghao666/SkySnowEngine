@@ -12,7 +12,7 @@ public:
     Application(Context* context);
     ~Application();
 
-    bool  initialize();
+    bool initialize();
 
     void onChange(int width,int height);
 
