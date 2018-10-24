@@ -1,8 +1,27 @@
 //
-// Created by liuqian8 on 2018/10/24.
+// Created by liuqian8 on 2018/10/18.
 //
 
-#ifndef ANDROID_ENGINE_H
-#define ANDROID_ENGINE_H
+#pragma once
+#include "Object.h"
+#include "Graphics.h"
 
-#endif //ANDROID_ENGINE_H
+class Engine: public Object
+{
+    ENGINE_OBJECT(Engine,Object);
+public:
+    Engine(Context* context);
+    ~Engine();
+
+    bool initialize();
+
+    void runFrame();
+
+    void onChanged(int width,int height);
+
+private:
+    bool initialized_ ;
+//    Renderer* renderer_;
+//    File* file;
+    Graphics* graphics_;
+};
