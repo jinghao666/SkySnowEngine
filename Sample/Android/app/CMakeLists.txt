@@ -14,7 +14,7 @@ find_library( log-lib
 target_include_directories( native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
                             native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}>
                             native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Application>
+                            native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Application/>
                             native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Core>
                             native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Graphics>
                             native-lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Graphics/gl>
