@@ -50,4 +50,5 @@ target_include_directories( SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkyS
 	                       )
 
 target_link_libraries( SourceCode
-                       GLESv2)
+                       GLESv2
+                       log)

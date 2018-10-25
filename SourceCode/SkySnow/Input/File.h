@@ -106,7 +106,7 @@ public:
 
     virtual ~File();
 
-    std::string getStringFromFile(const string filename,FileMode mode = FILE_READ);
+    std::string getStringFromFile(const string filename);
 
 protected:
     template <typename T,typename Enable = typename std::enable_if<std::is_base_of< ResizableBuffer, ResizableBufferAdapter<T> >::value>::type>
