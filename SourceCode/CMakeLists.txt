@@ -10,6 +10,7 @@ file(GLOB srcCode "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Input/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Math/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Metrial/*.cpp"
+                  "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Particle/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Resource/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Scence/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/SkySnow2D/*.cpp"
@@ -22,6 +23,7 @@ file(GLOB srcCode "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/*.cpp"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Input/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Math/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Metrial/*.c"
+                  "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Particle/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Resource/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Scence/*.c"
                   "${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/SkySnow2D/*.c"
@@ -40,6 +42,7 @@ target_include_directories( SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkyS
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Input
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Math
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Metrial
+                            SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Particle
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Resource
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/Scence
                             SourceCode  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SkySnow/SkySnow2D

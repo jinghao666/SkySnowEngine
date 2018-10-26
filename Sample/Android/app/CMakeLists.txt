@@ -17,6 +17,7 @@ target_include_directories( SkySnow_Lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
                             SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Input>
                             SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Math>
                             SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Metrial>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Particle>
                             SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Resource>
                             SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Scence>
                             SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/SkySnow2D>
