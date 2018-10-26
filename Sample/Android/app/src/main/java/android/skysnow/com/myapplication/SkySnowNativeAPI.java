@@ -11,7 +11,6 @@ public class SkySnowNativeAPI
         System.loadLibrary("SkySnow_Lib");
     }
 
-    protected long classId;
     public SkySnowNativeAPI()
     {
     }
