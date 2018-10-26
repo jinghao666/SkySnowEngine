@@ -13,3 +13,18 @@ Renderer::~Renderer()
 {
 
 }
+
+void Renderer::onCreate()
+{
+
+}
+
+void Renderer::onChanged(int width, int height)
+{
+
+}
+
+void Renderer::onDrawFrame()
+{
+
+}

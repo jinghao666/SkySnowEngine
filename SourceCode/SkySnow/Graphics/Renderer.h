@@ -13,4 +13,8 @@ public:
 
     Renderer(Context* context);
     virtual ~Renderer();
+
+    void onCreate();
+    void onChanged(int width,int height);
+    void onDrawFrame();
 };
