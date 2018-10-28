@@ -1,9 +1,6 @@
 //
 // Created by liuqian8 on 2018/10/18.
 //
-
-
-
 #include "Engine.h"
 #include "Context.h"
 
@@ -55,7 +52,7 @@ void Engine::onChanged(int width, int height)
     renderer_->onChanged(width,height);
 }
 
-void Engine::runFrame()
+void Engine::runFrame(float frameTime)
 {
     renderer_->onDrawFrame();
 }

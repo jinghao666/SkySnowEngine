@@ -1,22 +1,34 @@
 package android.skysnow.com.myapplication;
 
+import android.skysnow.com.myapplication.SkySnowBase.SkySnowView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
 {
-    private SkySnowNativeAPI skySnowNativeAPI;
+    private SkySnowView mSkySnowView;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        mSkySnowView =  new SkySnowView(this);
+        setContentView(mSkySnowView);
+    }
 
-        TextView tv = (TextView) findViewById(R.id.sample_text);
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mSkySnowView.onPause();
+    }
 
-        skySnowNativeAPI = new SkySnowNativeAPI();
-        tv.setText(skySnowNativeAPI.stringFromJNI());
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSkySnowView.onResume();
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
     }
 
 }

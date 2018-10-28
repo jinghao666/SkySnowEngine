@@ -26,8 +26,9 @@ bool Application::initialize()
 
 void Application::onChange(int width, int height)
 {
+    viewWidth_ = width;
+    viewHeight_ = height;
     engine_->onChanged(width,height);
-    windowSizeChange(width,height);
 }
 
 void Application::drawFrame()
@@ -37,14 +38,13 @@ void Application::drawFrame()
         endTime_ = getCurrentTime();
         frameTime_ = (endTime_ - startTime_)/10;
         fps_ = 1000/frameTime_;
-        LOGE("fps_                 :%f\n",fps_);
-        LOGE("Render One Frame Time:%f\n",frameTime_);
+        LOGI("fps_                 :%f\n",fps_);
+        LOGI("Render One Frame Time:%f\n",frameTime_);
         count_ = 0;
         startTime_ = endTime_;
     }
     count_ = (count_ + 1) % 10;
-    engine_ ->runFrame();
-    render(frameTime_);
+    engine_ ->runFrame(frameTime_);
 }
 
 long long Application::getCurrentTime()

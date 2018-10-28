@@ -16,7 +16,7 @@ public:
 
     bool initialize();
 
-    void runFrame();
+    void runFrame(float frameTime);
 
     void onChanged(int width,int height);
 

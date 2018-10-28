@@ -18,13 +18,12 @@ public:
 
     void drawFrame();
 
+protected:
     virtual void createScence(){};
 
-    virtual void windowSizeChange(int width,int height){};
-
-    virtual void render(float frameTime){};
-protected:
     Engine* engine_;
+    int viewWidth_;
+    int viewHeight_;
 
 private:
     long long getCurrentTime();
