@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include "Data.h"
+#include "Context.h"
 using namespace std;
 enum FileMode
 {
@@ -15,6 +16,7 @@ enum FileMode
     FILE_WRITE,
     FILE_READWRITE
 };
+
 
 enum class Status
 {
@@ -99,20 +101,35 @@ class File : public Object
 ENGINE_OBJECT(File,Object);
 public:
     File(Context *context):
-            Object(context)
+            Object(context),
+            context_(context)
     {
-
     }
 
     virtual ~File();
 
     std::string getStringFromFile(const string filename);
 
+    std::string getStringFromFileAssets(const string filename);
+
 protected:
     template <typename T,typename Enable = typename std::enable_if<std::is_base_of< ResizableBuffer, ResizableBufferAdapter<T> >::value>::type>
-    Status getContents(const std::string& filename, T* buffer) {
+    Status getContents(const std::string& filename, T* buffer)
+    {
         ResizableBufferAdapter<T> buf(buffer);
         return getContents(filename, &buf);
     }
+
+    template <typename T,typename Enable = typename std::enable_if<std::is_base_of< ResizableBuffer, ResizableBufferAdapter<T> >::value>::type>
+    ResizableBuffer* getResizableBuffer(T* buffer)
+    {
+        ResizableBufferAdapter<T> buf(buffer);
+        return &buf;
+    }
+
+
     Status getContents(const std::string& filename,ResizableBuffer* buffer);
+
+
+    Context* context_;
 };

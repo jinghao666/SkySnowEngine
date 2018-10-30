@@ -16,6 +16,8 @@ JNI_METHOD(jlong,createSkySnow)(JNIEnv *env,jobject)
 {
     Context* context = new Context();
     Application* app = new (std::nothrow)TestDemo(context);
+    if(app == NULL)
+        return -1;
     app->initialize();
     return (uintptr_t)(app);
 }
@@ -24,7 +26,7 @@ JNI_METHOD(jboolean,changeSkySnow)(JNIEnv *env,jobject,jlong classId,jint viewWi
 {
     Application* app = ((Application*)classId);
     if(app == NULL)
-        LOGE("NULL Point!");
+        return false;
     app->onChange(viewWidth,viewHeight);
     return true;
 }
@@ -32,16 +34,20 @@ JNI_METHOD(jboolean,changeSkySnow)(JNIEnv *env,jobject,jlong classId,jint viewWi
 JNI_METHOD(jboolean,drawOneFrameSkySnow)(JNIEnv *env,jobject,jlong classId)
 {
     Application* app = ((Application*)classId);
+    if(app == NULL)
+        return false;
     app->drawFrame();
     return true;
 }
 
 JNI_METHOD(jboolean,releaseSkySnow)(JNIEnv *env,jobject,jlong classId)
 {
-    Application* app = ((Application*)classId);
+    Application* app = ((TestDemo*)classId);
     if(app){
         delete app;
         app = NULL;
+    }else{
+        LOGE("Application  Pointer null！at SkySnowJni.cpp.");
     }
     return true;
 }

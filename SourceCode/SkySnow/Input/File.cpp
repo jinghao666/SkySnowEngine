@@ -3,7 +3,6 @@
 //
 #include "File.h"
 #include <sys/stat.h>
-
 File::~File()
 {
 
@@ -13,6 +12,32 @@ std::string File::getStringFromFile(const string filename)
 {
     std::string s;
     getContents(filename,&s);
+    return s;
+}
+
+std::string File::getStringFromFileAssets(const string filename)
+{
+    std::string s;
+#if PLATFORM == PLATFORM_ANDROID
+    AAssetManager* mgr_ = context_->getAAssetManager();
+    AAsset *asset = AAssetManager_open(mgr_, filename.c_str(), AASSET_MODE_BUFFER);
+    if(!asset){
+        LOGE("asset not found");
+        return NULL;
+    }
+    long size = AAsset_getLength(asset);
+    ResizableBuffer *buffer = getResizableBuffer(&s);
+    buffer->resize(size);
+    int readsize = AAsset_read(asset, buffer->buffer(), size);
+    AAsset_close(asset);
+    if (readsize < size) {
+        if (readsize >= 0)
+            buffer->resize(readsize);
+        LOGE("ReadFailed! --- File.cpp");
+        return nullptr;
+    }
+    return s;
+#endif
     return s;
 }
 

@@ -32,4 +32,5 @@ target_link_libraries( SkySnow_Lib
                        SourceCode
                        GLESv2
                        log
+                       android
                        )
