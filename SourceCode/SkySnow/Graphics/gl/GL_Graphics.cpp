@@ -296,12 +296,12 @@ void Graphics::setShaderParameter(string param, const glm::vec2 &vector)
         // Check the uniform type to avoid mismatch
         switch (info->glType_) {
             case GL_FLOAT:
-//                glUniform1fv(info->location_, 1,vector.Date());
+//                glUniform1fv(info->location_, 1,vector.Data());
                 glUniform1f(info->location_, vector.x);
                 break;
 
             case GL_FLOAT_VEC2:
-//                glUniform2fv(info->location_,1, vector.Date());
+//                glUniform2fv(info->location_,1, vector.Data());
                 glUniform2f(info->location_, vector.x,vector.y);
                 break;
 

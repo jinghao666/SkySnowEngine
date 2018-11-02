@@ -10,7 +10,7 @@
 #define PLATFORM_WINDOW 3
 #define PLATFORM_LINUX 4
 
-#define DEBUG 0
+#define DEBUG 1
 #define PLATFORM PLATFORM_UNKOW
 
 #include <string>
@@ -43,8 +43,8 @@ using namespace std;
 #include <ext/hash_map>
 #include <ext/hash_set>
 #include <list>
-#define  LOGI(...)  if(DEBUG)__android_log_print(ANDROID_LOG_INFO,SKYSNOW_LOG_TAG,__VA_ARGS__)
-#define  LOGE(...)  if(DEBUG)__android_log_print(ANDROID_LOG_ERROR,SKYSNOW_LOG_TAG,__VA_ARGS__)
+#define LOGI(...)  if(DEBUG) __android_log_print(ANDROID_LOG_INFO,SKYSNOW_LOG_TAG,__VA_ARGS__)
+#define LOGE(...)  if(DEBUG) __android_log_print(ANDROID_LOG_ERROR,SKYSNOW_LOG_TAG,__VA_ARGS__)
         using namespace __gnu_cxx;
         namespace __gnu_cxx
         {
@@ -79,8 +79,8 @@ using namespace std;
 #endif
 #endif
 #include <cstdio>
-#define  LOGI(...)   if(DEBUG)printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
-#define  LOGE(...)   if(DEBUG)printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
+#define  LOGI(...)   if(DEBUG) printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
+#define  LOGE(...)   if(DEBUG) printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
 #       define SN_Map      map
 #       define SN_List      list
 #       define SN_HashMap ::std::unordered_map
@@ -102,8 +102,8 @@ using namespace std;
 #include <string>
 #include <cstdio>
 #include <algorithm>
-#define  LOGI(...)  if(DEBUG)printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
-#define  LOGE(...)  if(DEBUG)printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
+#define  LOGI(...)  if(DEBUG) printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
+#define  LOGE(...)  if(DEBUG) printf(SKYSNOW_LOG_TAG,__VA_ARGS__)
 #endif
 #include <cstdint>
 #include <cstddef>
