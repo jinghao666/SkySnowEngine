@@ -2,6 +2,9 @@
 // Created by liuqian8 on 2018/10/2.
 //
 #pragma once
+
+#include <string>
+using namespace std;
 static const int MAX_VERTEX_STREAMS = 4;
 static const int M_MAX_UNSIGNED = 0xffffffff;
 /// Primitive type.
