@@ -13,7 +13,7 @@ class ShaderVariation;
 
 enum PassLightingMode
 {
-    LIGHTING_UNLIT = 0,
+    LIGHTING_UNLIT = 0,//
     LIGHTING_PERVERTEX,
     LIGHTING_PERPIXEL
 };
