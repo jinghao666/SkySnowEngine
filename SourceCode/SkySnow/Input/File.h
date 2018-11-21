@@ -120,7 +120,7 @@ protected:
         return getContents(filename, &buf);
     }
 
-    template <typename T,typename Enable = typename std::enable_if<std::is_base_of< ResizableBuffer, ResizableBufferAdapter<T> >::value>::type>
+    template <typename T,typename Enable1 = typename std::enable_if<std::is_base_of< ResizableBuffer, ResizableBufferAdapter<T> >::value>::type>
     ResizableBuffer* getResizableBuffer(T* buffer)
     {
         ResizableBufferAdapter<T> buf(buffer);

@@ -5,14 +5,13 @@
 */
 #pragma once
 #include "Application.h"
-
 class TestDemo : public Application
 {
 ENGINE_OBJECT(TestDemo,Object);
 public:
     TestDemo(Context* context);
     ~TestDemo();
-public:
-    virtual void createScence();
 
+protected:
+    virtual void createScence();
 };

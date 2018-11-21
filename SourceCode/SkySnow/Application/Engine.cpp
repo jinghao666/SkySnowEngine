@@ -42,7 +42,6 @@ bool Engine::initialize()
     graphics_ = new Graphics(context_);
     context_->registerSubsystem(graphics_);
 
-    renderer_ -> onCreate();
     initialized_ = true;
     return true;
 }
@@ -54,5 +53,6 @@ void Engine::onChanged(int width, int height)
 
 void Engine::runFrame(float frameTime)
 {
-    renderer_->onDrawFrame();
+    context_->getSubsystem<Renderer>()->Update(frameTime);
+    context_->getSubsystem<Renderer>()->Render();
 }
