@@ -21,7 +21,7 @@ TestDemo::~TestDemo()
 
 void TestDemo::createScence()
 {
-    LOGI("Child is render one Frame!");
+    LOGI("Child is create scence!");
 
 }
 

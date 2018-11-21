@@ -23,6 +23,20 @@ enum ShaderType
     FS
 };
 
+enum BlendMode
+{
+    BLEND_REPLACE = 0,
+    BLEND_ADD,
+    BLEND_MULTIPLY,
+    BLEND_ALPHA,
+    BLEND_ADDALPHA,
+    BLEND_PREMULALPHA,
+    BLEND_INVDESTALPHA,
+    BLEND_SUBTRACT,
+    BLEND_SUBTRACTALPHA,
+    MAX_BLENDMODES
+};
+
 //深度比较运算符
 enum CompareMode
 {
@@ -112,27 +126,27 @@ struct VertexElement
 };
 //顶点元素类型的大小
 static const unsigned ELEMENT_TYPESIZES[] =
-        {
-                sizeof(int),
-                sizeof(float),
-                3 * sizeof(float),
-                4 * sizeof(float),
-                sizeof(unsigned),
-                sizeof(unsigned)
-        };
+{
+        sizeof(int),
+        sizeof(float),
+        3 * sizeof(float),
+        4 * sizeof(float),
+        sizeof(unsigned),
+        sizeof(unsigned)
+};
 //每一个顶点数组的属性初始化
 static const VertexElement  LEGACY_VERTEXELEMENTS[] =
-        {
-                VertexElement(TYPE_VECTOR3, SEM_POSITION,"pos", false),                //position
-                VertexElement(TYPE_VECTOR3, SEM_NORMAL, "normal", false),              // Normal
-                VertexElement(TYPE_VECTOR3, SEM_BINORMAL, "binormal", false),         // binormal
-                VertexElement(TYPE_UBYTE4_NORM, SEM_COLOR, "color", false),           // Color
-                VertexElement(TYPE_VECTOR2, SEM_TEXCOORD, "texCoords", false),        // Texcoord
-                VertexElement(TYPE_VECTOR4, SEM_TANGENT, "tangent", false),           // Tangent
-                VertexElement(TYPE_VECTOR4, SEM_BLENDWEIGHTS, "blendWeight", false), // Blendweights
-                VertexElement(TYPE_UBYTE4, SEM_BLENDINDICES, "blendIndices", false), // Blendindices
-                VertexElement(TYPE_INT, SEM_OBJECTINDEX, "objectIndex", false)        // Objectindex
-        };
+{
+        VertexElement(TYPE_VECTOR3, SEM_POSITION,"pos", false),                //position
+        VertexElement(TYPE_VECTOR3, SEM_NORMAL, "normal", false),              // Normal
+        VertexElement(TYPE_VECTOR3, SEM_BINORMAL, "binormal", false),         // binormal
+        VertexElement(TYPE_UBYTE4_NORM, SEM_COLOR, "color", false),           // Color
+        VertexElement(TYPE_VECTOR2, SEM_TEXCOORD, "texCoords", false),        // Texcoord
+        VertexElement(TYPE_VECTOR4, SEM_TANGENT, "tangent", false),           // Tangent
+        VertexElement(TYPE_VECTOR4, SEM_BLENDWEIGHTS, "blendWeight", false), // Blendweights
+        VertexElement(TYPE_UBYTE4, SEM_BLENDINDICES, "blendIndices", false), // Blendindices
+        VertexElement(TYPE_INT, SEM_OBJECTINDEX, "objectIndex", false)        // Objectindex
+};
 //ramp 纹理类型
 enum TextureUnit
 {

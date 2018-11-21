@@ -6,7 +6,7 @@
 Renderer::Renderer(Context *context):
         Object(context)
 {
-
+    Initial();
 }
 
 Renderer::~Renderer()
@@ -14,7 +14,7 @@ Renderer::~Renderer()
 
 }
 
-void Renderer::onCreate()
+void Renderer::Initial()
 {
 
 }
@@ -24,7 +24,24 @@ void Renderer::onChanged(int width, int height)
 
 }
 
-void Renderer::onDrawFrame()
+void Renderer::Update(float timeStep)
+{
+
+}
+
+void Renderer::Render()
+{
+
+}
+
+
+void Renderer::LoadShaders()
+{
+    LOGI("Reloading shaders.");
+
+}
+
+void Renderer::CreateGeometries()
 {
 
 }
