@@ -6,7 +6,8 @@
 #include "WorkQueue.h"
 #include "Thread.h"
 #include "TestDemo.h"
-
+#include <vector>
+using namespace std;
 TestDemo::TestDemo(Context *context) :
 Application(context)
 {
@@ -22,8 +23,5 @@ void TestDemo::createScence()
 {
     LOGI("Child is render one Frame!");
 
-    WorkerThread* workerThread = new WorkerThread();
-
-    workerThread->run();
 }
 

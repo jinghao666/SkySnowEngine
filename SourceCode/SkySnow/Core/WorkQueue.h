@@ -17,10 +17,6 @@ public:
 
     void threadFunction() override
     {
-        while (1)
-        {
-            LOGE("是否在运行线程。");
-        }
 
     }
 
