@@ -2,30 +2,35 @@ cmake_minimum_required(VERSION 3.4.1)
 
 #添加源码公共库的编译
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode out)
-
-add_library( native-lib
+set(SkySnowAndroid "${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode")
+add_library( SkySnow_Lib
              SHARED
-             src/main/cpp/native-lib.cpp)
+             src/main/cpp/SkySnowJni.cpp)
 
-
-find_library( log-lib
-              log )
-
-target_include_directories( native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Application>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Core>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Graphics>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Graphics/gl>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Input>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Math>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Metrial>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Resource>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/Scence>
-                            native-lib PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../SourceCode/SkySnow/SkySnow2D>
+target_include_directories( SkySnow_Lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Application/>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Core>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Graphics>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Graphics/gl>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Input>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Math>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Metrial>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Particle>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Resource>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Sample>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/Scence>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/SkySnow/SkySnow2D>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/ThirdParty/glm>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/ThirdParty/glm/detail>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/ThirdParty/glm/gtc>
+                            SkySnow_Lib PRIVATE $<BUILD_INTERFACE:${SkySnowAndroid}/ThirdParty/glm/gtx>
                            )
 
-target_link_libraries( native-lib
+target_link_libraries( SkySnow_Lib
                        SourceCode
-                       ${log-lib} )
+                       GLESv2
+                       log
+                       android
+                       )
