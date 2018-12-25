@@ -5,6 +5,7 @@
 #pragma once
 
 #include <vector>
+#include "Batch.h"
 #include "Object.h"
 #include "ShaderVariation.h"
 #include "GraphicsDefs.h"
@@ -36,4 +37,7 @@ private:
     void LoadPassShaders(Pass* pass,vector<ShaderVariation> vertexShaders,vector<ShaderVariation> pixlShaders);
     //创建轻体积几何
     void CreateGeometries();
+
+
+
 };

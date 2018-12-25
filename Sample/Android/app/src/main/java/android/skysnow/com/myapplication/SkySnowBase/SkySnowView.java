@@ -18,7 +18,7 @@ public class SkySnowView extends GLSurfaceView
     public SkySnowView(Context context, AttributeSet attributeSet)
     {
         super(context, attributeSet);
-        mSkySnowRenderer = new SkySnowRenderer();
+        mSkySnowRenderer = new SkySnowRenderer(context);
         setEGLContextClientVersion(2);
         setPreserveEGLContextOnPause(true);
         setRenderer(mSkySnowRenderer);

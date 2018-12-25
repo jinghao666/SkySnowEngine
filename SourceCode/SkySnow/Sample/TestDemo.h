@@ -14,4 +14,16 @@ public:
 
 protected:
     virtual void createScence();
+    virtual void renderOneFrame(float frameTime);
+
+private:
+    Batch*          uiBatch_;
+    Material*       material_;
+    Geometry*       geometry_;
+    vector<float*>  vertexData_;
+    unsigned int    vbo_;
+    unsigned        gProgram;
+    int             vertexSize_;
+    float           vertexCount_;
+    Graphics*       graphics_;
 };

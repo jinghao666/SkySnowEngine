@@ -16,9 +16,9 @@ public class SkySnowNativeAPI
     {
     }
 
-    public void skySnowCreate()
+    public void skySnowCreate(Object assetsManager)
     {
-        mClassId = createSkySnow();
+        mClassId = createSkySnow(assetsManager);
         if(mClassId < 0)
             Log.e("SkySnow:","Create SkySnow Scence failure! ---SkySnowNativeAPI.java");
     }
@@ -65,7 +65,7 @@ public class SkySnowNativeAPI
         return true;
     }
 
-    private native long createSkySnow();
+    private native long createSkySnow(Object assetsManager);
 
     private native boolean changeSkySnow(long classId, int viewWidth,int viewHeight);
 

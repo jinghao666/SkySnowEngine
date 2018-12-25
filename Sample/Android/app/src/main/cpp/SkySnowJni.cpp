@@ -12,9 +12,14 @@
 extern "C" {
 #endif
 
-JNI_METHOD(jlong,createSkySnow)(JNIEnv *env,jobject)
+JNI_METHOD(jlong,createSkySnow)(JNIEnv *env,jobject object,jobject assetManager)
 {
     Context* context = new Context();
+
+    jobject assetManagerTemp_ = env->NewGlobalRef(assetManager);
+    AAssetManager* mgr = AAssetManager_fromJava(env,assetManagerTemp_);
+    context->setSetAssetManager(mgr);
+
     Application* app = new (std::nothrow)TestDemo(context);
     if(app == NULL)
         return -1;

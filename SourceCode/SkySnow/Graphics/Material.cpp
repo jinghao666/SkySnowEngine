@@ -24,8 +24,8 @@ int Material::setShaderVariation(string vsName,string fsName)
 {
     mFile = this->getSubsystem<File>();
     graphics = this->getSubsystem<Graphics>();
-    vs = new ShaderVariation(graphics,VS, mFile->getStringFromFile(vsName));
-    fs = new ShaderVariation(graphics,FS,mFile->getStringFromFile(fsName));
+    vs = new ShaderVariation(graphics,VS, mFile->getStringFromFileAssets(vsName));
+    fs = new ShaderVariation(graphics,FS,mFile->getStringFromFileAssets(fsName));
     graphics->SetShaders(vs,fs);
 
     return graphics->getShaderProgram()->getGPUObjectName();

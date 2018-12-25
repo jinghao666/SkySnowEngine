@@ -4,6 +4,7 @@
  * https://github.com/SkySnowEngine/SkySnowEngine
  */
 package android.skysnow.com.myapplication.SkySnowBase;
+import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
@@ -12,14 +13,17 @@ import javax.microedition.khronos.opengles.GL10;
 public class SkySnowRenderer implements GLSurfaceView.Renderer
 {
     private SkySnowNativeAPI skySnowNativeAPI;
-    public SkySnowRenderer()
+    private Context mContext;
+    public SkySnowRenderer(Context context)
     {
         skySnowNativeAPI = new SkySnowNativeAPI();
+
+        mContext = context;
     }
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config)
     {
-        skySnowNativeAPI.skySnowCreate();
+        skySnowNativeAPI.skySnowCreate(mContext.getAssets());
     }
 
     @Override

@@ -20,6 +20,7 @@ public:
 
 protected:
     virtual void createScence(){};
+    virtual void renderOneFrame(float frameTime){};
 
     Engine* engine_;
     int viewWidth_;

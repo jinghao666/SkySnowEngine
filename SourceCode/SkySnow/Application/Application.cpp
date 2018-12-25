@@ -45,6 +45,7 @@ void Application::drawFrame()
     }
     count_ = (count_ + 1) % 10;
     engine_ ->runFrame(frameTime_);
+    renderOneFrame(frameTime_);
 }
 
 long long Application::getCurrentTime()
